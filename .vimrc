@@ -5,3 +5,6 @@ source ~/.vim/.plug
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" Delete over newlines
+set backspace=indent,eol,start
