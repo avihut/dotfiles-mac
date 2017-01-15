@@ -6,6 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'Shougo/neocomplete'
 
 Plug 'https://github.com/kien/ctrlp.vim'
+Plug 'jdowner/ctrlp-py-matcher'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
