@@ -13,3 +13,8 @@ set number
 highlight LineNr ctermfg=grey
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
+
+map <Tab> <C-W>w
+
+set incsearch
+set hlsearch
