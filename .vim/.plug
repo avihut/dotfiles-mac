@@ -2,7 +2,18 @@
 call plug#begin()
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'Shougo/neocomplete'
+
 Plug 'https://github.com/kien/ctrlp.vim'
+
+Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
+
+Plug 'vim-syntastic/syntastic'
+
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-repeat'
 call plug#end()

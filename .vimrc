@@ -11,3 +11,5 @@ set backspace=indent,eol,start
 
 set number
 highlight LineNr ctermfg=grey
+
+let g:ackprg = 'ag --nogroup --nocolor --column'
