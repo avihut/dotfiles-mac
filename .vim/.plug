@@ -4,17 +4,23 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 Plug 'Shougo/neocomplete'
+Plug 'majutsushi/tagbar'
 
 Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'jdowner/ctrlp-py-matcher'
+Plug 'tpope/vim-repeat'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 
 Plug 'vim-syntastic/syntastic'
 
-Plug 'tpope/vim-fugitive'
+Plug 'austintaylor/vim-indentobject'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-repeat'
+
+Plug 'duff/vim-scratch'
+
+Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
 call plug#end()
