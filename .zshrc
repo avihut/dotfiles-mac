@@ -70,6 +70,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+export EDITOR='vim'
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
@@ -85,3 +87,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias config='/usr/local/bin/git --git-dir=/Users/avihut/.cfg/ --work-tree=/Users/avihut'
+
+# git shortcuts
+alias gdst='gd --staged'
+alias gcvm='git commit -v -m'
