@@ -6,7 +6,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Language and Syntax
 Plug 'Shougo/neocomplete'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
+" Plug 'vim-syntastic/syntastic'
 
 " File Management
 Plug 'scrooloose/nerdtree'
