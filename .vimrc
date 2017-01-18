@@ -15,6 +15,7 @@ highlight LineNr ctermfg=grey
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 map <Tab> <C-W>w
+map <S-Tab> <C-W>W
 
 set incsearch
 set hlsearch
