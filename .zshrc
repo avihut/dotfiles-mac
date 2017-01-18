@@ -91,3 +91,5 @@ alias config='/usr/local/bin/git --git-dir=/Users/avihut/.cfg/ --work-tree=/User
 # git shortcuts
 alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
+alias gadc='git add -u'
+alias gadu='git add $(git ls-files -o --exclude-standard)'
