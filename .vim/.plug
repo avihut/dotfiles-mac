@@ -33,6 +33,9 @@ Plug 'skammer/vim-css-color'
 " JSON
 Plug 'elzr/vim-json'
 
+" Swift
+Plug 'keith/swift.vim'
+
 " Markdown
 Plug 'Valloric/vim-instant-markdown'
 call plug#end()
