@@ -34,7 +34,7 @@ Plug 'skammer/vim-css-color'
 Plug 'elzr/vim-json'
 
 " Swift
-Plug 'keith/swift.vim'
+Plug 'kballard/vim-swift'
 
 " Markdown
 Plug 'Valloric/vim-instant-markdown'
