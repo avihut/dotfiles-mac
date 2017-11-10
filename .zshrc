@@ -46,3 +46,5 @@ alias gcvm='git commit -v -m'
 alias gadc='git add -u'
 alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias gc-b='git checkout -b'
+alias pipup="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias brewup='brew upgrade && brew cleanup && brew prune'
