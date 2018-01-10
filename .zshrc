@@ -2,7 +2,10 @@
 export HOME_BIN=$HOME/bin
 export LOCAL_BIN=/usr/local/bin
 export BOOST_ROOT=/usr/local/lib/boost/boost_1_64_0
-export PATH=$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$PATH
+export ANDROID_HOME=/Users/avihut/Library/Android/sdk
+export ANDROID_TOOLS=$ANDROID_HOME/tools
+export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
+export PATH=$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/avihut/.oh-my-zsh
@@ -24,7 +27,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git zsh-syntax-highlighting zsh-autosuggestions colorize extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,3 +51,24 @@ alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias gc-b='git checkout -b'
 alias pipup="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
 alias brewup='brew upgrade && brew cleanup && brew prune'
+
+# Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
+targz() {
+	if [ "$#" -eq 0 ]; then
+		echo "Usage: targz <path to tar> [archive name]"
+		echo "   If archive name is not provided, it will be based on the name of the path being archived."
+		return 1
+	fi
+
+	local file_to_tar=$(basename "$1")
+	local tar_file_name="${file_to_tar%%.*}.tar.gz"
+	if [ "$#" -ge 2 ]; then
+		tar_file_name="$2"
+	fi
+
+	if [ "$#" -eq 1 ]; then
+		echo "taring into '$tar_file_name'"
+	fi
+
+	tar cf - "$1" -P | pv -s $(($(du -sk "$1" | awk '{print $1}') * 1024)) | pigz > "$tar_file_name"
+}
