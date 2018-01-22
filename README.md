@@ -8,7 +8,7 @@
 
 1. Clone the repository to a configuration directory called `.cfg` under youe home directory
 ```shell
-git clone --bare git@github.com:avihubuga/Ubuntu-Dot-File-Configuration.git ~/.cfg
+git clone --bare git@github.com:avihu/Mac-Dot-File-Configuration.git ~/.cfg
 ```
 
 2. Checkut the configuration
