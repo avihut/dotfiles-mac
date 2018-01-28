@@ -2,13 +2,13 @@
 export HOME_BIN=$HOME/bin
 export LOCAL_BIN=/usr/local/bin
 export BOOST_ROOT=/usr/local/lib/boost/boost_1_64_0
-export ANDROID_HOME=/Users/avihut/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export PATH=$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/avihut/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -41,7 +41,7 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias config='/usr/local/bin/git --git-dir=/Users/avihut/.cfg/ --work-tree=/Users/avihut'
+alias config='/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 # git shortcuts
 alias gdst='gd --staged'
