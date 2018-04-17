@@ -43,6 +43,8 @@ export EDITOR='vim'
 
 alias config='/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+alias g='googler -n 7 -l en'
+
 # git shortcuts
 alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
