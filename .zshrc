@@ -5,7 +5,9 @@ export BOOST_ROOT=/usr/local/lib/boost/boost_1_64_0
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
-export PATH=$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
+export HOME_LIB="$HOME/lib"
+export LIB_FLUTTER="$HOME_LIB/flutter/bin"
+export PATH=$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
