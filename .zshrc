@@ -7,7 +7,8 @@ export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export HOME_LIB="$HOME/lib"
 export LIB_FLUTTER="$HOME_LIB/flutter/bin"
-export PATH=$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
+export LIBEXEC=/usr/libexec
+export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -53,7 +54,7 @@ alias gcvm='git commit -v -m'
 alias gadc='git add -u'
 alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias gc-b='git checkout -b'
-alias pipup="pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 pip3 install -U"
+alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python3 -m pip install -U"
 alias brewup='brew upgrade && brew cleanup && brew prune'
 
 # Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
