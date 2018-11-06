@@ -8,7 +8,8 @@ export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export HOME_LIB="$HOME/lib"
 export LIB_FLUTTER="$HOME_LIB/flutter/bin"
 export LIBEXEC=/usr/libexec
-export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$PATH
+export HYDRA_HOME=~/Projects/Hydra/bin
+export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
