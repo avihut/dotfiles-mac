@@ -31,7 +31,13 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-syntax-highlighting zsh-autosuggestions colorize extract)
+plugins=(
+	git
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+	colorize
+	extract
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -78,3 +84,4 @@ targz() {
 
 	tar cf - "$1" -P | pv -s $(($(du -sk "$1" | awk '{print $1}') * 1024)) | pigz > "$tar_file_name"
 }
+source /Users/avihu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
