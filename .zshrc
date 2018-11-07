@@ -14,6 +14,8 @@ export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOL
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+eval "$(rbenv init -)"
+
 eval "$(pyenv init -)"
 eval "pyenv virtualenvwrapper"
 
@@ -25,8 +27,12 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context pyenv virtualenv dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context rbenv pyenv virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history battery time)
+POWERLEVEL9K_RBENV_BACKGROUND='red'
+POWERLEVEL9K_RBENV_FOREGROUND='white'
+POWERLEVEL9K_PYENV_BACKGROUND='yellow'
+POWERLEVEL9K_PYENV_FOREGROUND='black'
 
 ENABLE_CORRECTION="true"
 
