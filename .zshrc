@@ -11,6 +11,12 @@ export LIBEXEC=/usr/libexec
 export HYDRA_HOME=~/Projects/Hydra/bin
 export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+eval "$(pyenv init -)"
+eval "pyenv virtualenvwrapper"
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -19,6 +25,8 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context pyenv virtualenv dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 
 ENABLE_CORRECTION="true"
 
