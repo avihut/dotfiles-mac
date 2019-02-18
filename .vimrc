@@ -24,3 +24,7 @@ map <S-Tab> <C-W>W
 
 set incsearch
 set hlsearch
+
+au BufRead,BufNewFile Podfile set filetype=ruby
+
+au BufRead,BufNewFile hydra set filetype=python
