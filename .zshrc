@@ -100,8 +100,11 @@ targz() {
 
 	tar cf - "$1" -P | pv -s $(($(du -sk "$1" | awk '{print $1}') * 1024)) | pigz > "$tar_file_name"
 }
-source /Users/avihu/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /Users/avihu/.viarc
+
+export ZSH_SYNHI=$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+test -e ZSH_SYNHI && source ZSH_SYNHI
+
+export VIARC=$HOME/.viarc
+test -e VIARC && source VIARC
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
