@@ -49,7 +49,9 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	zsh-syntax-highlighting
+	# For some reason syntax highlighting works even though
+	# this plugin is turned off.
+	#zsh-syntax-highlighting
 	zsh-autosuggestions
 	colorize
 	extract
@@ -78,7 +80,7 @@ alias gadc='git add -u'
 alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias gc-b='git checkout -b'
 alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python3 -m pip install -U"
-alias brewup='brew upgrade && brew cleanup && brew prune'
+alias brewup='brew upgrade && brew cleanup && brew cleanup --prune-prefix'
 
 # Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
 targz() {
@@ -103,6 +105,7 @@ targz() {
 
 export ZSH_SYNHI=$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 test -e ZSH_SYNHI && source ZSH_SYNHI
+source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export VIARC=$HOME/.viarc
 test -e VIARC && source VIARC

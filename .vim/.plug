@@ -33,6 +33,9 @@ Plug 'skammer/vim-css-color'
 " JSON
 Plug 'elzr/vim-json'
 
+" YAML
+Plug 'mrk21/yaml-vim'
+
 " Swift
 Plug 'kballard/vim-swift'
 
