@@ -6,10 +6,11 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export HOME_LIB="$HOME/lib"
-export LIB_FLUTTER="$HOME_LIB/flutter/bin"
+export FLUTTER_LIB="$HOME_LIB/flutter"
+export FLUTTER_BIN="$FLUTTER_LIB/bin"
 export LIBEXEC=/usr/libexec
 export HYDRA_HOME=~/Projects/Hydra/bin
-export PATH=$LIBEXEC:$LIB_FLUTTER:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
+export PATH=$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -73,6 +74,10 @@ alias config='/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias g='googler -n 7 -l en'
 
+alias cdflutter='cd $FLUTTER_LIB'
+
+alias venv='python -m venv'
+
 # git shortcuts
 alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
@@ -81,6 +86,7 @@ alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias gc-b='git checkout -b'
 alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python3 -m pip install -U"
 alias brewup='brew upgrade && brew cleanup && brew cleanup --prune-prefix'
+alias ggroom='git remote prune origin && git gc --prune=now'
 
 # Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
 targz() {
@@ -108,6 +114,6 @@ test -e ZSH_SYNHI && source ZSH_SYNHI
 source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export VIARC=$HOME/.viarc
-test -e VIARC && source VIARC
+test -e $VIARC && source $VIARC
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
