@@ -41,4 +41,8 @@ Plug 'kballard/vim-swift'
 
 " Markdown
 Plug 'Valloric/vim-instant-markdown'
+
+" Dart
+Plug 'dart-lang/dart-vim-plugin'
+
 call plug#end()

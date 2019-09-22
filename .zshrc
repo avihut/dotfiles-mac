@@ -83,10 +83,12 @@ alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
 alias gadc='git add -u'
 alias gadu='git add $(git ls-files -o --exclude-standard)'
+alias glop='git log --oneline --patch'
 alias gc-b='git checkout -b'
 alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xargs -n1 python3 -m pip install -U"
 alias brewup='brew upgrade && brew cleanup && brew cleanup --prune-prefix'
 alias ggroom='git remote prune origin && git gc --prune=now'
+alias gbranches='nocorrect git branch -r | grep -v HEAD | while read b; do git log --color --format="%ci _%C(magenta)%cr %C(bold cyan)$b%Creset %s %C(bold blue)[%an]%Creset" $b | head -n 1; done | sort -r | cut -d_ -f2- | sed "s;origin/;;g"'
 
 # Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
 targz() {
