@@ -78,6 +78,8 @@ alias cdflutter='cd $FLUTTER_LIB'
 
 alias venv='python -m venv'
 
+alias n='nocorrect'
+
 # git shortcuts
 alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
