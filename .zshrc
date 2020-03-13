@@ -9,7 +9,8 @@ export HOME_LIB="$HOME/lib"
 export FLUTTER_LIB="$HOME_LIB/flutter"
 export FLUTTER_BIN="$FLUTTER_LIB/bin"
 export LIBEXEC=/usr/libexec
-export HYDRA_HOME=~/Projects/Hydra/bin
+export PROJECT_HOME=$HOME/Projects
+export HYDRA_HOME=$PROJECT_HOME/Hydra/bin
 export PATH=$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
 
 export LC_ALL=en_US.UTF-8
@@ -28,8 +29,7 @@ export ZSH=$HOME/.oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context virtualenv dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
 POWERLEVEL9K_RBENV_BACKGROUND='red'
 POWERLEVEL9K_RBENV_FOREGROUND='white'
@@ -53,7 +53,7 @@ plugins=(
 	git
 	# For some reason syntax highlighting works even though
 	# this plugin is turned off.
-	#zsh-syntax-highlighting
+	zsh-syntax-highlighting
 	zsh-autosuggestions
 	colorize
 	extract
@@ -114,12 +114,5 @@ targz() {
 
 	tar cf - "$1" -P | pv -s $(($(du -sk "$1" | awk '{print $1}') * 1024)) | pigz > "$tar_file_name"
 }
-
-export ZSH_SYNHI=$HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-test -e ZSH_SYNHI && source ZSH_SYNHI
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-export VIARC=$HOME/.viarc
-test -e $VIARC && source $VIARC
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
