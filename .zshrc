@@ -8,16 +8,27 @@ export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export HOME_LIB="$HOME/lib"
 export FLUTTER_LIB="$HOME_LIB/flutter"
 export FLUTTER_BIN="$FLUTTER_LIB/bin"
+export POSTGRESSQL="/Library/PostgreSQL/13/bin/"
 export LIBEXEC=/usr/libexec
 export PROJECT_HOME=$HOME/Projects
 export HYDRA_HOME=$PROJECT_HOME/Hydra/bin
-export PATH=$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
+export BREEZE_HOME=$HOME/Breeze/Projects/main
+export PATH=$BREEZE_HOME:$POSTGRESSQL:$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
+
+# node.js
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 eval "$(rbenv init -)"
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "pyenv virtualenvwrapper"
 
@@ -81,9 +92,12 @@ alias venv='python -m venv'
 
 alias n='nocorrect'
 
+alias hydrate='n workon hydra'
+
 # git shortcuts
 alias gdst='gd --staged'
 alias gcvm='git commit -v -m'
+alias gcvsm='git commit -v -S -m'
 alias gadc='git add -u'
 alias gadu='git add $(git ls-files -o --exclude-standard)'
 alias glop='git log --oneline --patch'
@@ -116,3 +130,12 @@ targz() {
 }
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/avihut/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/avihut/bin/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/avihut/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/avihut/bin/google-cloud-sdk/completion.zsh.inc'; fi
