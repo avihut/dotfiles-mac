@@ -6,7 +6,7 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_TOOLS=$ANDROID_HOME/tools
 export ANDROID_PLATFORM_TOOLS=$ANDROID_HOME/platform-tools
 export HOME_LIB="$HOME/lib"
-export FLUTTER_LIB="$HOME_LIB/flutter"
+export FLUTTER_LIB="$HOME_BIN/flutter"
 export FLUTTER_BIN="$FLUTTER_LIB/bin"
 export POSTGRESSQL="/Library/PostgreSQL/13/bin/"
 export LIBEXEC=/usr/libexec
@@ -82,7 +82,7 @@ export EDITOR='vim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias config='/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias g='googler -n 7 -l en'
 
@@ -135,7 +135,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/avihut/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/avihut/bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/avihuturzion/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/avihuturzion/bin/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/avihut/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/avihut/bin/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/avihuturzion/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/avihuturzion/bin/google-cloud-sdk/completion.zsh.inc'; fi
