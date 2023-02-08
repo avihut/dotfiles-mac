@@ -68,6 +68,7 @@ plugins=(
 	zsh-autosuggestions
 	colorize
 	extract
+	swiftpm
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,7 +107,7 @@ alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xa
 alias brewup='brew upgrade && brew cleanup && brew cleanup --prune-prefix'
 alias ggroom='git remote prune origin && git gc --prune=now'
 alias gbranches='nocorrect git branch -r | grep -v HEAD | while read b; do git log --color --format="%ci _%C(magenta)%>(15)%cr %C(bold blue)%<(16)%an%Creset %C(bold cyan)$b%Creset %s" $b | head -n 1; done | sort -r | cut -d_ -f2- | sed "s;origin/;;g"'
-alias gprune='nocorrect git branch -r | awk "{print $1}" | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk "{print $1}" | xargs git branch -d'
+alias gprune="git fetch -p && git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '\$2 == \"[gone]\" {sub(    \"refs/heads/\", \"\", \$1); print \$1}' | xargs -n 1 git branch -D"
 
 # Taken from https://superuser.com/questions/168749/is-there-a-way-to-see-any-tar-progress-per-file
 targz() {
