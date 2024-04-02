@@ -1,4 +1,3 @@
-# If you come from bash you might have to change your $PATH.
 export HOME_BIN=$HOME/bin
 export LOCAL_BIN=/usr/local/bin
 export BOOST_ROOT=/usr/local/lib/boost/boost_1_64_0
@@ -13,7 +12,8 @@ export LIBEXEC=/usr/libexec
 export PROJECT_HOME=$HOME/Projects
 export HYDRA_HOME=$PROJECT_HOME/Hydra/bin
 export BREEZE_HOME=$HOME/Breeze/Projects/main
-export PATH=$BREEZE_HOME:$POSTGRESSQL:$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
+export PUB_CACHE_HOME=$HOME/.pub-cache/bin
+export PATH=$PUB_CACHE_HOME:$BREEZE_HOME:$POSTGRESSQL:$LIBEXEC:$FLUTTER_BIN:$BOOST_ROOT:$HOME_BIN:$LOCAL_BIN:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$HYDRA_HOME:$PATH
 
 # node.js
 export NVM_DIR="$HOME/.nvm"
@@ -27,7 +27,7 @@ eval "$(rbenv init -)"
 
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "pyenv virtualenvwrapper"
@@ -69,6 +69,7 @@ plugins=(
 	colorize
 	extract
 	swiftpm
+	direnv
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -136,7 +137,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/avihuturzion/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/avihuturzion/bin/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f "${HOME_BIN}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME_BIN}/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/avihuturzion/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/avihuturzion/bin/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f "${HOME_BIN}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME_BIN}/google-cloud-sdk/completion.zsh.inc"; fi
