@@ -30,7 +30,11 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /opt/homebrew/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+source /opt/homebrew/share/zsh-autopair/autopair.zsh
+source /opt/homebrew/share/zsh-you-should-use/you-should-use.plugin.zsh
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 export GPG_TTY=$(tty)
 
@@ -53,6 +57,13 @@ plugins=(
 	direnv
 )
 
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 source $OMZ/oh-my-zsh.sh
 
 # User configuration
@@ -73,6 +84,8 @@ alias pipup="python3 -m pip freeze --local | grep -v '^\-e' | cut -d = -f 1 | xa
 alias brewup='brew upgrade && brew cleanup && brew cleanup --prune-prefix'
 alias ggroom='git remote prune origin && git gc --prune=now'
 alias gbranches='nocorrect git branch -r | grep -v HEAD | while read b; do git log --color --format="%ci _%C(magenta)%>(15)%cr %C(bold blue)%<(16)%an%Creset %C(bold cyan)$b%Creset %s" $b | head -n 1; done | sort -r | cut -d_ -f2- | sed "s;origin/;;g"'
+
+alias ls="eza --group-directories-first --icons"
 
 bdiff() {
     git diff --name-only --relative --diff-filter=d | xargs bat --diff
