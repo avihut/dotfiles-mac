@@ -31,7 +31,7 @@ It's recommended you first fork this repository to your own account to make sure
 
 1. Clone the repository to a configuration directory called `.cfg` under youe home directory
     ```shell
-    git clone --bare git@github.com:TeamPattern/dev-setup-for-mac.git ~/.cfg
+    git clone --bare git@github.com:avihut/dotfiles-mac.git ~/.cfg
     ```
 
 2. Checkut the configuration
