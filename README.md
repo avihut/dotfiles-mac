@@ -1,6 +1,6 @@
 # Mac Dev Machine Configuration
 ## Setup
-This explainer guide you through setting up a standard Mac Dev machine with `zsh`, iTerm2 terminal, powerlevel10k terminal theme, and basic pacakges you'll need for most workflows. By the end of it you'll have VS Code with a basic set of extensions installed through brew. Follow these installation instructions to have the set of recommended configurations.
+This explainer guide you through setting up a standard Mac Dev machine with zsh, iTerm2 terminal, powerlevel10k terminal theme, and basic pacakges you'll need for most workflows. By the end of it you'll have VS Code with a basic set of extensions installed through brew. Follow these installation instructions to have the set of recommended configurations.
 
 1. Set your login shell to `zsh`.
 2. Install [iTerm2](https://iterm2.com/downloads.html).
