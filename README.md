@@ -41,7 +41,7 @@ It's recommended you first fork this repository to your own account to make sure
 
 3. Apply configuration changes
     ```shell
-    source ~/.zshrc
+    exec zsh
     ```
 
 4. `alias` the configuration command (done automatically in [`.zshrc`](.zshrc#L89))
